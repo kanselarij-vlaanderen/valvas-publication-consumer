@@ -1,0 +1,20 @@
+{
+  "name": "valvas-publication-consumer",
+  "version": "1.0.0",
+  "description": "Microservice to sync Themis publications to Valvas",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanselarij/valvas-publication-consumer.git"
+  },
+  "author": "redpencil.io",
+  "license": "MIT",
+  "dependencies": {
+    "@lblod/mu-auth-sudo": "^0.2.0",
+    "node-fetch": "^2.6.0",
+    "fs-extra": "^8.0.1",
+    "n3": "^1.3.6"
+  }
+}
