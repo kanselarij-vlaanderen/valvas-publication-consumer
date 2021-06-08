@@ -17,7 +17,7 @@ Add the service to your `docker-compose.yml`:
 
 Change the `SYNC_BASE_URL` to the application hosting the producer server.
 
-The mounted volume `./data/files` is the location where the documents that are downloaded from Kaleidos, will be stored.
+The mounted volume `./data/files` is the location where the documents that are downloaded from Themis, will be stored.
 
 Optionally, a volume can be mounted at `/tmp`. The files downloaded from the producer service are stored in this folder. However, on successfull ingest the file will be removed.
 
