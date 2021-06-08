@@ -7,7 +7,6 @@ const DATASET_NEWSITEM_TYPE = 'http://themis.vlaanderen.be/id/concept/dataset-ty
 const DOCUMENT_NEWSITEM_TYPE = 'http://themis.vlaanderen.be/id/concept/document-type/63d628cb-a594-4166-8b4e-880b4214fc5b';
 const PUBLIC_GRAPH = 'http://mu.semte.ch/graphs/public';
 const BATCH_SIZE = parseInt(process.env.BATCH_SIZE) || 100;
-const UPDATE_BATCH_SIZE = parseInt(process.env.UPDATE_BATCH_SIZE) || 100;
 
 export {
   INGEST_INTERVAL,
@@ -18,6 +17,5 @@ export {
   DOCUMENT_NEWSITEM_TYPE,
   DATASET_NEWSITEM_TYPE,
   PUBLIC_GRAPH,
-  BATCH_SIZE,
-  UPDATE_BATCH_SIZE
+  BATCH_SIZE
 }
