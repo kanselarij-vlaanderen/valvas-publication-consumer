@@ -36,7 +36,7 @@ app.post('/ingest', async function (req, res, next) {
       try {
         const datasets = await getUnconsumedDatasets(task.since);
         task.datasets = datasets;
-        task.execute();
+        task.execute();  // errors are handled inside task.execute()
         return res.status(202).end();
       } catch (e) {
         console.log(`Something went wrong while ingesting. Closing sync task with failure state.`);
