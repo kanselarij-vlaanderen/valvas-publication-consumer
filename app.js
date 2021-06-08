@@ -3,6 +3,7 @@ import fetch from 'node-fetch';
 import { INGEST_INTERVAL } from './config';
 import { scheduleSyncTask, getRunningSyncTask, getNextSyncTask } from './lib/sync-task';
 import { getUnconsumedDatasets } from './lib/dataset';
+import { waitForDatabase } from './lib/database-utils';
 
 /**
  * Core assumption of the microservice that must be respected at all times:
@@ -23,6 +24,15 @@ async function triggerIngest() {
     setTimeout(triggerIngest, INGEST_INTERVAL);
   }
 }
+
+waitForDatabase(async () => {
+  const runningTask = await getRunningSyncTask();
+  if (runningTask) {
+    console.log(`Task <${runningTask.uri.value}> is still ongoing at startup. Updating its status to failed.`);
+    await setTaskFailedStatus(runningTask.uri.value);
+  }
+  triggerIngest();
+});
 
 app.post('/ingest', async function (req, res, next) {
   await scheduleSyncTask();
