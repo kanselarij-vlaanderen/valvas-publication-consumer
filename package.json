@@ -12,7 +12,7 @@
   "author": "redpencil.io",
   "license": "MIT",
   "dependencies": {
-    "@lblod/mu-auth-sudo": "^0.2.0",
+    "@lblod/mu-auth-sudo": "^0.3.2",
     "node-fetch": "^2.6.0",
     "fs-extra": "^8.0.1",
     "n3": "^1.3.6"
