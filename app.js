@@ -1,7 +1,7 @@
 import { app, errorHandler } from 'mu';
 import fetch from 'node-fetch';
 import { INGEST_INTERVAL } from './config';
-import { scheduleSyncTask, getRunningSyncTask, getNextSyncTask } from './lib/sync-task';
+import { scheduleSyncTask, setTaskFailedStatus, getRunningSyncTask, getNextSyncTask } from './lib/sync-task';
 import { getUnconsumedDatasets } from './lib/dataset';
 import { waitForDatabase } from './lib/database-utils';
 
